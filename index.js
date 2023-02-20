@@ -1,6 +1,5 @@
 const addForm = document.querySelector(".add");
 const todos = document.querySelector(".todos");
-const delBtn = todos.querySelector(".delete");
 
 const generateTemplate = (todo) => {
   const html = `<li
@@ -21,5 +20,11 @@ addForm.addEventListener("submit", (e) => {
     generateTemplate(todo);
     // addForm.add.value = null;
     addForm.reset();
+  }
+});
+
+todos.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete")) {
+    e.target.parentElement.remove();
   }
 });
